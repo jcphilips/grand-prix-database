@@ -1,5 +1,6 @@
 TODO:
-- [ ] Fix scrapper
+- [x] Fix scrapper
+- [ ] Fix data parsing of scrapper
 - [ ] Scrape data
 - [ ] Write SQL script to insert data to database
 - [ ] Add constraints to database
