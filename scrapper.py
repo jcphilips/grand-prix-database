@@ -1,8 +1,17 @@
-import re
-import pandas as pd
+from io import StringIO
+import os
 
 from bs4 import BeautifulSoup
+import pandas as pd
 import requests
+
+cwd = os.getcwd()
+race_dir = f"{cwd}/races/"
+
+try:
+    os.mkdir(race_dir)
+except FileExistsError as e:
+    print(f"Directory already exists at {race_dir}")
 
 homepage = "https://pitwall.app"
 homepage_request = requests.get(homepage)
@@ -15,7 +24,7 @@ for season in seasons:
     season_request = requests.get(season_url)
     season_soup = BeautifulSoup(season_request.content, 'lxml')
 
-    season_section = season_soup.select_one("div.section h3:contains('schedule') + table")
+    season_section = season_soup.select_one("div.section h3:-soup-contains('schedule') + table")
     races = season_section.find_all("a")
 
     for race in races:
@@ -23,11 +32,14 @@ for season in seasons:
         race_request = requests.get(race_url)
         race_soup = BeautifulSoup(race_request.content, 'lxml')
 
-        table_results = race_soup.select_one("div#race-results table")
-        # print(table_results)
-        #
-        df = pd.read_html(table_results)[0]
-        #
-        # df.to_csv(f"{race_url}.csv", index=False)
+        title = race_soup.find("h1").get_text()
 
-    break
+        table_results = race_soup.select_one("div#race-results table")
+        #
+        df = pd.read_html(StringIO(str(table_results)))[0]
+        #
+        df.to_csv(f"{race_dir}/{title}", index=False)
+        print(f"Successfully scraped {title} data.")
+
+print("Successfully scraped data for all races!")
+
