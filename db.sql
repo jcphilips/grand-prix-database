@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: drivers; Type: TABLE; Schema: public; Owner: jarrod
+-- Name: drivers; Type: TABLE; Schema: public; Owner: jarrodphilips
 --
 
 CREATE TABLE public.drivers (
@@ -31,10 +31,10 @@ CREATE TABLE public.drivers (
 );
 
 
-ALTER TABLE public.drivers OWNER TO jarrod;
+ALTER TABLE public.drivers OWNER TO jarrodphilips;
 
 --
--- Name: race_results; Type: TABLE; Schema: public; Owner: jarrod
+-- Name: race_results; Type: TABLE; Schema: public; Owner: jarrodphilips
 --
 
 CREATE TABLE public.race_results (
@@ -46,10 +46,10 @@ CREATE TABLE public.race_results (
 );
 
 
-ALTER TABLE public.race_results OWNER TO jarrod;
+ALTER TABLE public.race_results OWNER TO jarrodphilips;
 
 --
--- Name: races; Type: TABLE; Schema: public; Owner: jarrod
+-- Name: races; Type: TABLE; Schema: public; Owner: jarrodphilips
 --
 
 CREATE TABLE public.races (
@@ -60,10 +60,10 @@ CREATE TABLE public.races (
 );
 
 
-ALTER TABLE public.races OWNER TO jarrod;
+ALTER TABLE public.races OWNER TO jarrodphilips;
 
 --
--- Name: teams; Type: TABLE; Schema: public; Owner: jarrod
+-- Name: teams; Type: TABLE; Schema: public; Owner: jarrodphilips
 --
 
 CREATE TABLE public.teams (
@@ -73,10 +73,10 @@ CREATE TABLE public.teams (
 );
 
 
-ALTER TABLE public.teams OWNER TO jarrod;
+ALTER TABLE public.teams OWNER TO jarrodphilips;
 
 --
--- Data for Name: drivers; Type: TABLE DATA; Schema: public; Owner: jarrod
+-- Data for Name: drivers; Type: TABLE DATA; Schema: public; Owner: jarrodphilips
 --
 
 COPY public.drivers (id, name, nationality) FROM stdin;
@@ -951,7 +951,7 @@ COPY public.drivers (id, name, nationality) FROM stdin;
 
 
 --
--- Data for Name: race_results; Type: TABLE DATA; Schema: public; Owner: jarrod
+-- Data for Name: race_results; Type: TABLE DATA; Schema: public; Owner: jarrodphilips
 --
 
 COPY public.race_results (race_id, driver_id, team_id, points, race_position) FROM stdin;
@@ -959,7 +959,7 @@ COPY public.race_results (race_id, driver_id, team_id, points, race_position) FR
 
 
 --
--- Data for Name: races; Type: TABLE DATA; Schema: public; Owner: jarrod
+-- Data for Name: races; Type: TABLE DATA; Schema: public; Owner: jarrodphilips
 --
 
 COPY public.races (id, name, location, date) FROM stdin;
@@ -2068,7 +2068,7 @@ COPY public.races (id, name, location, date) FROM stdin;
 
 
 --
--- Data for Name: teams; Type: TABLE DATA; Schema: public; Owner: jarrod
+-- Data for Name: teams; Type: TABLE DATA; Schema: public; Owner: jarrodphilips
 --
 
 COPY public.teams (id, name, nationality) FROM stdin;
@@ -2141,7 +2141,7 @@ COPY public.teams (id, name, nationality) FROM stdin;
 
 
 --
--- Name: drivers drivers_pkey; Type: CONSTRAINT; Schema: public; Owner: jarrod
+-- Name: drivers drivers_pkey; Type: CONSTRAINT; Schema: public; Owner: jarrodphilips
 --
 
 ALTER TABLE ONLY public.drivers
@@ -2149,7 +2149,7 @@ ALTER TABLE ONLY public.drivers
 
 
 --
--- Name: races races_pkey; Type: CONSTRAINT; Schema: public; Owner: jarrod
+-- Name: races races_pkey; Type: CONSTRAINT; Schema: public; Owner: jarrodphilips
 --
 
 ALTER TABLE ONLY public.races
@@ -2157,7 +2157,7 @@ ALTER TABLE ONLY public.races
 
 
 --
--- Name: teams teams_pkey; Type: CONSTRAINT; Schema: public; Owner: jarrod
+-- Name: teams teams_pkey; Type: CONSTRAINT; Schema: public; Owner: jarrodphilips
 --
 
 ALTER TABLE ONLY public.teams
@@ -2165,7 +2165,7 @@ ALTER TABLE ONLY public.teams
 
 
 --
--- Name: race_results race_results_driver_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: jarrod
+-- Name: race_results race_results_driver_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: jarrodphilips
 --
 
 ALTER TABLE ONLY public.race_results
@@ -2173,7 +2173,7 @@ ALTER TABLE ONLY public.race_results
 
 
 --
--- Name: race_results race_results_race_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: jarrod
+-- Name: race_results race_results_race_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: jarrodphilips
 --
 
 ALTER TABLE ONLY public.race_results
@@ -2181,7 +2181,7 @@ ALTER TABLE ONLY public.race_results
 
 
 --
--- Name: race_results race_results_team_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: jarrod
+-- Name: race_results race_results_team_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: jarrodphilips
 --
 
 ALTER TABLE ONLY public.race_results
